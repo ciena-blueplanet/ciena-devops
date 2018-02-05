@@ -18,7 +18,7 @@ env:
   matrix:
   - CXX=g++-4.8
   global:
-    secure: ???
+    secure: QK5nLaToSe5GKkxmfMxd+kFufcAKH2E9Upb35KnGMt47NT8r9Nx5P+cNM6o+XldcraFlar6VGokmu4Nq9D4jG224Ki/ikZfZdolyXA/KVbHn3h0ynbsz4rNTO29l/K4GAHBRZoN59qyaPS8at+OC7Wmqdnqx/I1/lPlr4H4oPBqsFXHBJ3pkulyQ2hWCvtoMlQsuEE7ULQRu+O/UQBO5OTHj+SWAj4FVGHnf+WKRey8IWxIY+Ncur6aeEMZlDIWYCJ//Wb9daOiGvNkAZwQiHUrEbvqGu7rumcUYz7ygrVkUMQ5cFPJfTshnxeRK2ZO2bPtfxDUISXjVKGsrNPeyg5uHIUXg6qgEZ7TKc/ARMF/4LvaTa8egQqQo/8Il+B08b9539WZBbpXr6eb3zVk/NevOmUNdv0JGuL6eWgQfSxBEiE2BT95AMtr7pumxNO681TF4nAjtG9xDimch2bxUO6ZKXRSA5gXvp42P5gXRwYVPXkvnhx6Zd0e02/1cC9wp5Df/B5b2vpq6JYB3bxvKL6EHScM36ZdEsv8mhmXdEbkttZ4LXp3RhAFbXQfTQVy3AvHrNWAi7SqJF+j7wLRgwPq+xx+jbOeh75K/LOy0TEWY7o3xIvlPPpbJP5382YsksO2A2GuWsfv2TD6HBGpkbpwvph+Zb6KOgzwu5AaZdf4=
 
 before_install:
 - npm install -g pr-bumper@^3.0.0
@@ -41,7 +41,7 @@ deploy:
   email: npm.ciena@gmail.com
   skip_cleanup: true
   api_key:
-    secure: ???
+    secure: gQZsgax0d2w9iAyAkp0dLmjGylF/0ftf/ereWiAdEYHypOgdzTPjGv17LQftjEuHrgM73J+RRT0A1ugeA4pRCRjxoGA7Kus0d0QKZt2AjnGWEB8UjIc8nvK61Ku3BpfTNEhYCJZQNyRYtL3FDC3o94FNSg7ZNAwKW9KzOMfrF7sxtzktUg1FhG62IdiSeoOSFK4MM5SiOS7g1UZqYxYxeqVy3VGT376/orjvk3arj/5sKcddlOViw7ohUDIrzHB2kfHX6PhtdpUexoBL/xwcTKRHdTH4awg8qVxHgYlg2coe32qOdpxnwMj0cBT9MnoBPCdL4Sc4ZKxLzN20B+itRgZO8pB5YleTjdOqn7OEjDQeyhJubA+SEH5qc2G/u++mdrMI2+08+y8IbfaGCj1ANDb/2wn3YGCmsmCjFZvxNSU1Y/GE5+fxs1D9Ozyrcc6uU/XoRt3DvwYIK/5tOk+pdzH/cYOW+vk62JjzJUGAlel9r2C7G+guDz2LuWZTVJceGWwEEr4cn8TCkrYYsvbV98CXVrnBmQmtDtEOuSBrdGAqnov7ZI05EmsvvxAJ8dtVjID/cMBU6jP8ixQlkDqN2+n8s4eC6taT8QDWKz2s/ZST3oSCvh/ym+juj9pdisxnPm/vXbLkmoP0Cv9B+bG6LOaOAqBo7wbnWq7K6d8DeMU=
   on:
     all_branches: true
     node: '6.9.1'
