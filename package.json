@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "cat 'no-op' > /dev/null",
-    "lint": "cat 'no-op' > /dev/null"
+    "build": "echo",
+    "lint": "echo"
   },
   "repository": "git@github.com:ciena-blueplanet/ciena-devops.git",
   "engines": {
