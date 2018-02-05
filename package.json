@@ -7,13 +7,13 @@
     "test": "tests"
   },
   "scripts": {
-    "lint": "lint-all-the-things"
+    "lint": ""
   },
   "repository": "git@github.com:ciena-blueplanet/ciena-devops.git",
   "engines": {
     "node": ">= 6.0.0"
   },
-  "author": ""Jeremy Brown <jeremy@notmessenger.com> (http://www.notmessenger.com)",
+  "author": "Jeremy Brown <jeremy@notmessenger.com> (http://www.notmessenger.com)",
   "contributors": [],
   "license": "MIT",
   "devDependencies": {
