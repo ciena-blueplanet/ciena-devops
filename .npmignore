@@ -1,0 +1,6 @@
+.github/
+.eslintrc
+.gitignore
+.npmignore
+.pullapprove.yml
+.travis.yml
