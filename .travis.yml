@@ -12,7 +12,6 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
-  firefox: 'latest'
 
 cache:
   directories:
