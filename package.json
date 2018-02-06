@@ -1,6 +1,6 @@
 {
   "name": "ciena-devops",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A collection of scripts and configurations used by the Ciena organization in their DevOps",
   "directories": {
     "doc": "doc",
@@ -18,8 +18,6 @@
   "author": "Jeremy Brown <jeremy@notmessenger.com> (http://www.notmessenger.com)",
   "contributors": [],
   "license": "MIT",
-  "devDependencies": {
-  },
-  "dependencies": {
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
