@@ -21,20 +21,18 @@ env:
     secure: QK5nLaToSe5GKkxmfMxd+kFufcAKH2E9Upb35KnGMt47NT8r9Nx5P+cNM6o+XldcraFlar6VGokmu4Nq9D4jG224Ki/ikZfZdolyXA/KVbHn3h0ynbsz4rNTO29l/K4GAHBRZoN59qyaPS8at+OC7Wmqdnqx/I1/lPlr4H4oPBqsFXHBJ3pkulyQ2hWCvtoMlQsuEE7ULQRu+O/UQBO5OTHj+SWAj4FVGHnf+WKRey8IWxIY+Ncur6aeEMZlDIWYCJ//Wb9daOiGvNkAZwQiHUrEbvqGu7rumcUYz7ygrVkUMQ5cFPJfTshnxeRK2ZO2bPtfxDUISXjVKGsrNPeyg5uHIUXg6qgEZ7TKc/ARMF/4LvaTa8egQqQo/8Il+B08b9539WZBbpXr6eb3zVk/NevOmUNdv0JGuL6eWgQfSxBEiE2BT95AMtr7pumxNO681TF4nAjtG9xDimch2bxUO6ZKXRSA5gXvp42P5gXRwYVPXkvnhx6Zd0e02/1cC9wp5Df/B5b2vpq6JYB3bxvKL6EHScM36ZdEsv8mhmXdEbkttZ4LXp3RhAFbXQfTQVy3AvHrNWAi7SqJF+j7wLRgwPq+xx+jbOeh75K/LOy0TEWY7o3xIvlPPpbJP5382YsksO2A2GuWsfv2TD6HBGpkbpwvph+Zb6KOgzwu5AaZdf4=
 
 before_install:
-- npm install -g pr-bumper@^3.0.0
+- npm install -g pr-bumper@^3.2.3
+- $(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh
 
 install:
-- npm install
-
-before_script:
-- npm run build
-- $(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh
+- $(npm root -g)/pr-bumper/.travis/maybe-install.sh
 
 script:
 - $(npm root -g)/pr-bumper/.travis/maybe-test.sh
 - $(npm root -g)/pr-bumper/.travis/maybe-bump-version.sh
 
 after_success:
+- $(npm root -g)/pr-bumper/.travis/maybe-publish-coverage.sh
 
 deploy:
   provider: npm
