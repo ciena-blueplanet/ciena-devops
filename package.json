@@ -7,7 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "lint": ""
+    "build": "echo",
+    "lint": "echo",
+    "test": "echo"
   },
   "repository": "git@github.com:ciena-blueplanet/ciena-devops.git",
   "engines": {
