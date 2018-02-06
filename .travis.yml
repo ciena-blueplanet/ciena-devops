@@ -47,3 +47,7 @@ deploy:
     all_branches: true
     node: '8.1.2'
     tags: true
+
+notifications:
+  slack:
+    secure: aiEQqG38+sPKH/H/sQ/5JmttF5u/r81FEFg8Ccq+d9dXkCFgKTNGOk+lnnqfCCtYrWW89O8Uw5QeGMaVuG7GaEHxlsLQKW0HxzfnGTWFjaIRVI+w92BIsM6YoTY5SWZfjkETVz7FoPmHHNsJ5/k4rHtcvpk3IGzhIYuFnXtEb4pmsnAqzlioX+8BQMBi8NkCjy85JXom/034iIZMNoM+s+/K1/EgCwFQ2wp3i+cFxWz7SVuic6iW3dOLr5SGPgP74oNVaviMeoU7zX46nL0gT0wVmo8iqoOi/Kv/S499X1eofbYOH6UQ16RIeWBS0Sj5HY+SE/TojoIhNdSU4eDVcUFmnUl7yrIcNjW2DnXNyIpgKOUVq5xNS0xD409CBzwHPfJ4Icex0E+QrHz0zOGLyCG1Td4+UA8HAkKhLyv/hS+9RvpK+7cJEjonT/fYe0tI6sTmDvyiEj0fGJvrvWWuuwxfTIn3BDxFYH082B/vY0veNI8wloWRcqMhDJpmjD0+aLVjSqPtKv6FvL2d2temrnV3TuUa9fP8EleccGzZfW/kmcs20mVOfznhDMzy17A3X6rkyBDqHsbXPKbc2nRt3IKjQFT8rC4WhaKkFX3GTv2wXhOaKO6v8ss8jN1pwIhY+H6FahFhRx19mPLDNQVAdyk7oLjERGQRzdStqSWVEfw=
