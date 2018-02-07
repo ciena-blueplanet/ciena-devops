@@ -18,8 +18,8 @@
   "author": "Jeremy Brown <jeremy@notmessenger.com> (http://www.notmessenger.com)",
   "contributors": [],
   "license": "MIT",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "semver": "^5.5.0"
   }
 }
