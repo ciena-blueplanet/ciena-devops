@@ -19,8 +19,7 @@ An error message may also be sent when an error is encountered:
 
 ### TravisCI Configuration
 
-An environment variable needs to be added to the TravisCI configuration at [https://travis-ci.org](https://
-travis-ci.org) as well as two additions need to be added to the _.travis.yml_ file.
+An environment variable needs to be added to the TravisCI configuration at [https://travis-ci.org](https://travis-ci.org) as well as two additions need to be added to the _.travis.yml_ file.
 
 The environment variable that needs to be added to the respective package's configuration in TravisCI is `SLACK_INCOMING_WEBHOOK_URL` and needs to be set to the url of the incoming webhook integration for the `#ui-platform` channel.
 
