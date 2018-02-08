@@ -6,9 +6,6 @@
     "doc": "doc",
     "test": "tests"
   },
-  "bin": {
-    "get-release-type": "./scripts/get-release-type.js"
-  },
   "scripts": {
     "build": "echo",
     "install": "npm install -g semver@^5.5.0",
