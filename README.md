@@ -21,9 +21,14 @@ An error message may also be sent when an error is encountered:
 
 An environment variable needs to be added to the TravisCI configuration at [https://travis-ci.org](https://travis-ci.org) as well as two additions need to be added to the _.travis.yml_ file.
 
-The environment variable that needs to be added to the respective package's configuration in TravisCI is `SLACK_INCOMING_WEBHOOK_URL` and needs to be set to the url of the incoming webhook integration for the `#ui-platform` channel.
+The environment variable that needs to be added to the respective package's configuration in TravisCI is
+`SLACK_INCOMING_WEBHOOK_URL` and needs to be set to the url of the incoming webhook integration for the `#ui-platform`
+channel.  To do this visit `https://travis-ci.org/<your-org>/<your-repo>/settings`. **NOTE:** When adding the
+`SLACK_INCOMING_WEBHOOK_URL` variable, make sure to turn the "_Display value in build log_" to "_ON_" or it will be
+considered a secure variable and not available to PR builds from forks.
 
-The additions to the _.travis.yml_ file are to add the `ciena-devops` package to the `npm install` in the `before_install` configuration, such as:
+The additions to the _.travis.yml_ file are to add the `ciena-devops` package to the `npm install` in the
+`before_install` configuration, such as:
 
 ```yaml
 before_install:
@@ -49,7 +54,8 @@ This script contains several functions related to retrieving information about p
 
 ## Creating new scripts
 
-When developing new scripts you must change the permissions of them before committing, as per [https://docs.travis-ci.com/user/customizing-the-build/#Implementing-Complex-Build-Steps](https://docs.travis-ci.com/user/customizing-the-build/#Implementing-Complex-Build-Steps)
+When developing new scripts you must change the permissions of them before committing, as per
+[https://docs.travis-ci.com/user/customizing-the-build/#Implementing-Complex-Build-Steps](https://docs.travis-ci.com/user/customizing-the-build/#Implementing-Complex-Build-Steps)
 
 You may also find the [https://www.shellcheck.net](https://www.shellcheck.net) tool helpful when writing `bash` 
 scripts.
