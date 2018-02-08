@@ -173,7 +173,7 @@ function get_release_type() {
     local previous_version=$1
     local new_version=$2
 
-    echo "$(node -e "const semver = require('semver'); console.log(semver.diff('$previous_version', '$new_version'));" | tr '[:lower:]' '[:upper:]')"
+    ./scripts/get-release-type.js "$previous_version" "$current_version"
 }
 
 #
