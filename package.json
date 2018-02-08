@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "echo",
+    "install": "npm install -g semver@^5.5.0",
     "lint": "echo",
     "test": "echo"
   },
@@ -23,6 +24,5 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "semver": "^5.5.0"
   }
 }
