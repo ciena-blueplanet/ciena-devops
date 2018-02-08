@@ -81,8 +81,6 @@ function get_current_version() {
 
     get_versions "$package"
 
-    sleep 5
-
     echo "${versions[${#versions[@]}-1]}"
 }
 
@@ -164,8 +162,6 @@ function get_previous_version() {
     local package=$1
 
     get_versions "$package"
-
-    sleep 5
 
     echo "${versions[${#versions[@]}-2]}"
 }
