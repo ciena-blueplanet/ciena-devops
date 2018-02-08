@@ -24,8 +24,7 @@ An environment variable needs to be added to the TravisCI configuration at [http
 The environment variable that needs to be added to the respective package's configuration in TravisCI is
 `SLACK_INCOMING_WEBHOOK_URL` and needs to be set to the url of the incoming webhook integration for the `#ui-platform`
 channel.  To do this visit `https://travis-ci.org/<your-org>/<your-repo>/settings`. **NOTE:** When adding the
-`SLACK_INCOMING_WEBHOOK_URL` variable, make sure to turn the "_Display value in build log_" to "_ON_" or it will be
-considered a secure variable and not available to PR builds from forks.
+`SLACK_INCOMING_WEBHOOK_URL` variable, make sure to keep the "_Display value in build log_" set to "_OFF_" otherwise the url will be written to the build logs for the public to see.
 
 The additions to the _.travis.yml_ file are to add the `ciena-devops` package to the `npm install` in the
 `before_install` configuration, such as:
