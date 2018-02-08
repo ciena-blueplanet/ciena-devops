@@ -173,7 +173,7 @@ function get_release_type() {
     local previous_version=$1
     local new_version=$2
 
-    echo "$("cd $(npm root -g)/ciena-devops/" && node -e "const semver = require('semver'); console.log(semver.diff('$previous_version', '$new_version'));" | tr '[:lower:]' '[:upper:]')"
+    echo "$("cd $(npm root -g)/ciena-devops" && node -e "const semver = require('semver'); console.log(semver.diff('$previous_version', '$new_version'));" | tr '[:lower:]' '[:upper:]')"
 }
 
 #
