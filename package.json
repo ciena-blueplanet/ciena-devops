@@ -9,7 +9,6 @@
   "scripts": {
     "build": "echo",
     "lint": "echo",
-    "postinstall": "npm install -g semver@^5.5.0",
     "test": "echo"
   },
   "repository": "git@github.com:ciena-blueplanet/ciena-devops.git",
