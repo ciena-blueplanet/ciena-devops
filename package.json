@@ -6,6 +6,9 @@
     "doc": "doc",
     "test": "tests"
   },
+  "bin": {
+    "get-release-type": "./scripts/get-release-type.js"
+  },
   "scripts": {
     "build": "echo",
     "lint": "echo",
@@ -19,5 +22,7 @@
   "contributors": [],
   "license": "MIT",
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "semver": "^5.5.0"
+  }
 }
