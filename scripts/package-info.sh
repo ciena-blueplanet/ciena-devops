@@ -51,7 +51,7 @@ function get_changelog() {
             break
         else
             # Skip the line beginning with "# 2.0.0" (without quotes), for example
-            [[ "$line" =~ ^[#]{1}.*$ ]] && continue
+            [[ "$line" =~ ^#[[:space:]]{1}.*$ ]] && continue
             changelog+="$line\n"
         fi
     done < "$changelog_file"
