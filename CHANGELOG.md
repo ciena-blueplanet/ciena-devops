@@ -1,3 +1,6 @@
+# 1.0.0 (2018-02-09)
+* Release this package as 1.0.0
+
 # 0.1.0 (2018-02-09)
 * Add scripts to publish to `#ui-platform` Slack channel
 
