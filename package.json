@@ -6,6 +6,9 @@
     "doc": "doc",
     "test": "tests"
   },
+  "bin": {
+    "get-release-type": "./scripts/get-release-type.js"
+  },
   "scripts": {
     "build": "echo",
     "lint": "echo",
