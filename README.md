@@ -24,7 +24,7 @@ A `repository` property needs to added to the _package.json_ file, such as:
 ```json
 "repository": {
   "type": "git",
-  "url": "https://github.com/<organization>/<repo>.git"
+  "url": "https://<url>/<organization>/<repo>.git"
 },
 ```
 
