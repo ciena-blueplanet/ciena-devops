@@ -70,3 +70,4 @@ When developing new scripts you must change the permissions of them before commi
 
 You may also find the [https://www.shellcheck.net](https://www.shellcheck.net) tool helpful when writing `bash` 
 scripts.
+
