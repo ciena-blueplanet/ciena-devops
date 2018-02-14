@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "bin": {
-    "get-release-type": "./scripts/get-release-type.js"
+    "get-release-type": "./scripts/get-release-type.js",
+    "get-version": "./scripts/get-version.js"
   },
   "scripts": {
     "build": "echo",
