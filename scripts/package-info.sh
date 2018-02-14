@@ -77,11 +77,7 @@ function get_changelog_url() {
 # Get current package version
 #
 function get_current_version() {
-    local package=$1
-
-    get_versions "$package"
-
-    echo "${versions[${#versions[@]}-1]}"
+    get-version "$1"
 }
 
 #
@@ -159,11 +155,7 @@ function get_package_name () {
 # Get previous package version
 #
 function get_previous_version() {
-    local package=$1
-
-    get_versions "$package"
-
-    echo "${versions[${#versions[@]}-2]}"
+    get-version "$1" previous
 }
 
 #
@@ -174,31 +166,4 @@ function get_release_type() {
     local new_version=$2
 
     get-release-type "$previous_version" "$current_version"
-}
-
-#
-# Get all published versions of package in NPM
-#
-function get_versions() {
-    # If "versions" is already populated don't need to populate it again
-    if [ -z ${versions+x} ];
-    then
-        local package=$1
-        local version_info_string
-        local version_info_string_array
-
-        version_info_string=$(npm view "$package" versions)
-        version_info_string_array=( $(echo "$version_info_string" | tr ' ' '\n') )
-
-        for ((i=0; i < ${#version_info_string_array[@]}; i++))
-        do
-            # if not first or last element, which are "[" and "]" (without quotes), respectively
-            if [ $i -ne 0 ] && [ $i -ne $((${#version_info_string_array[@]}-1)) ];
-            then
-                # is a global variable
-                # strips off apostrophes and commas
-                versions[$((i-1))]="${version_info_string_array[$i]//[\',]}"
-            fi
-        done
-    fi
 }
