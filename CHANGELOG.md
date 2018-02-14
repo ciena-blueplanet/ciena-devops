@@ -1,3 +1,6 @@
+# 1.0.1 (2018-02-14)
+* Resolved [#11](https://github.com/ciena-blueplanet/ciena-devops/issues/11) - Current approach to retrieving NPM package version information is not practical
+
 # 1.0.0 (2018-02-09)
 * Release this package as 1.0.0
 
