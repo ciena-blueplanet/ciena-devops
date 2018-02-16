@@ -66,7 +66,7 @@ where the contents of the `Custom script` are:
 ```bash
 #!/bin/bash
 
-export SLACK_INCOMING_WEBHOOK_URL="%tc.slack.ui-platform.incoming.webhook%"
+export SLACK_INCOMING_WEBHOOK_URL="%env.tc.slack.ui-platform.incoming.webhook%"
 
 git clone https://github.com/ciena-blueplanet/ciena-devops.git
 ./ciena-devops/scripts/slack/incoming-webhooks/send-message.sh
