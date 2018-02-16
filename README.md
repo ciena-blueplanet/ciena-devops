@@ -55,7 +55,24 @@ after_deploy:
 
 ### TeamCity Configuration
 
-@TODO
+An environment variable needs to be added to the TeamCity project configuration named `env.tc.slack.ui-platform.incoming.webhook` whose value is set to the url of the incoming webhook integration for the `#ui-platform` channel.
+
+A new build step needs to be added to the TeamCity project configuration with the following information:
+
+![TeamCity Build Step](https://user-images.githubusercontent.com/435544/36332083-5bc6a050-1336-11e8-93f2-3908af493ca8.png)
+
+where the contents of the `Custom script` are:
+
+```bash
+#!/bin/bash
+
+export SLACK_INCOMING_WEBHOOK_URL="%env.tc.slack.ui-platform.incoming.webhook%"
+
+git clone https://github.com/ciena-blueplanet/ciena-devops.git
+./ciena-devops/scripts/slack/incoming-webhooks/send-message.sh
+```
+
+and set to run after the `Slack Notification (1) (inherited)` step and before the `Cleanup Container (inherited)` step.
 
 
 ## scripts/package-info.sh
