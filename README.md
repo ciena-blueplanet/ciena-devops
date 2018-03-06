@@ -16,8 +16,9 @@ An error message may also be sent when an error is encountered:
 
 ![Example Slack Error Message](https://user-images.githubusercontent.com/435544/35946206-80c3bee8-0c28-11e8-81c1-b351050ddedb.png)
 
+## Configuration
 
-### package.json Configuration
+### package.json
 
 A `repository` property needs to added to the _package.json_ file, such as:
 
@@ -29,7 +30,7 @@ A `repository` property needs to added to the _package.json_ file, such as:
 ```
 
 
-### TravisCI Configuration
+### TravisCI
 
 An environment variable needs to be added to the TravisCI configuration at [https://travis-ci.org](https://travis-ci.org) as well as two additions need to be added to the _.travis.yml_ file.
 
@@ -53,26 +54,59 @@ after_deploy:
 - $(npm root -g)/ciena-devops/scripts/slack/incoming-webhooks/send-message.sh
 ```
 
-### TeamCity Configuration
+### TeamCity
+
+#### #1
 
 An environment variable needs to be added to the TeamCity project configuration named `env.tc.slack.ui-platform.incoming.webhook` whose value is set to the url of the incoming webhook integration for the `#ui-platform` channel.
 
+#### #2
+
+The `Setup CI Environment (inherited)` build step needs to be duplicated and modified, with the original build step being set to disabled.  Name the new build step: `Setup CI Environment (deviates from inherited by exporting SLACK_INCOMING_WEBHOOK_URL`
+
+The modification that needs to be made is to add
+
+```bash
+# Fill in SLACK_INCOMING_WEBHOOK_URL
+export SLACK_INCOMING_WEBHOOK_URL="%env.tc.slack.ui-platform.incoming.webhook%"
+```
+
+somewhere within the `cat << EOF > ${ENV_DIR}/nenv` section, before the `EOF` entry.
+
+
+#### #3
+
 A new build step needs to be added to the TeamCity project configuration with the following information:
 
-![TeamCity Build Step](https://user-images.githubusercontent.com/435544/36332083-5bc6a050-1336-11e8-93f2-3908af493ca8.png)
+![TeamCity Build Step](https://user-images.githubusercontent.com/435544/37061103-ffc6d5e2-2157-11e8-9050-d43120c6f0d6.png)
 
 where the contents of the `Custom script` are:
 
 ```bash
 #!/bin/bash
+NAME=frost-ci-image
+IMAGE=$(docker images | grep ${NAME} | awk '{print$3}')
+CONTAINER=$(docker ps -a | grep $IMAGE | awk '{print$1}')
 
-export SLACK_INCOMING_WEBHOOK_URL="%env.tc.slack.ui-platform.incoming.webhook%"
+# Fill in TEAMCITY_PULL_REQUEST
+stripped_branch=$(echo "%teamcity.build.branch%" | sed -e "s/\/merge//")
+re='^[0-9]+$'
+if [[ $stripped_branch =~ $re ]]
+then
+    export TEAMCITY_PULL_REQUEST="$stripped_branch"
+else
+    export TEAMCITY_PULL_REQUEST="false"
+fi
 
-git clone https://github.com/ciena-blueplanet/ciena-devops.git
-./ciena-devops/scripts/slack/incoming-webhooks/send-message.sh
+if [[ "$TEAMCITY_PULL_REQUEST" = "false" ]]
+then
+    docker exec $CONTAINER nenv npm install -g ciena-devops@^1.0.0 || exit $?
+    docker exec $CONTAINER nenv /opt/node-envs/%env.node_version%/lib/node_modules/ciena-devops/scripts/slack/incoming-webhooks/send-message.sh || exit $?
+fi
 ```
 
 and set to run after the `Slack Notification (1) (inherited)` step and before the `Cleanup Container (inherited)` step.
+
 
 
 ## scripts/package-info.sh
