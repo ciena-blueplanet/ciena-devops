@@ -77,7 +77,9 @@ function get_changelog_url() {
 # Get current package version
 #
 function get_current_version() {
-    get-version "$1"
+    version=$(get_package_version)
+
+    get-version "$1" "$version"
 }
 
 #
@@ -152,10 +154,19 @@ function get_package_name () {
 }
 
 #
+# Get "version" property from package.json file
+#
+function get_package_version () {
+    echo "$(node -e "console.log(require('./package.json').version)")"
+}
+
+#
 # Get previous package version
 #
 function get_previous_version() {
-    get-version "$1" previous
+    version=$(get_package_version)
+
+    get-version "$1" "$version" previous
 }
 
 #
