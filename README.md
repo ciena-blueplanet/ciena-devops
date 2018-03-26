@@ -8,7 +8,7 @@ message to the `#frost-foundation` Slack channel.
 
 The message will look like:
 
-![Example Slack Message](https://user-images.githubusercontent.com/435544/35946094-19944f76-0c28-11e8-8c6d-783241c4eff4.png)
+![Example Slack Message](https://user-images.githubusercontent.com/435544/37919606-0125f1ec-30ea-11e8-9f9e-28f9cddc79fe.png)
 
 PATCHES will have a green color, MINOR blue, and MAJOR burgundy.
 
