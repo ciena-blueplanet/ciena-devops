@@ -44,7 +44,7 @@ The additions to the _.travis.yml_ file are to add the `ciena-devops` package to
 
 ```yaml
 before_install:
-- npm install -g pr-bumper@^3.2.3 ciena-devops^1.0.0
+- npm install -g pr-bumper@^3.7.0 ciena-devops^1.1.0
 ```
 
 The second addition is to add an `after_deploy` configuration, such as:
@@ -100,7 +100,7 @@ fi
 
 if [[ "$TEAMCITY_PULL_REQUEST" = "false" ]]
 then
-    docker exec $CONTAINER nenv npm install -g ciena-devops@^1.0.0 || exit $?
+    docker exec $CONTAINER nenv npm install -g ciena-devops@^1.1.0 || exit $?
     docker exec $CONTAINER nenv /opt/node-envs/%env.node_version%/lib/node_modules/ciena-devops/scripts/slack/incoming-webhooks/send-message.sh || exit $?
 fi
 ```
