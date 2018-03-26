@@ -78,7 +78,7 @@ somewhere within the `cat << EOF > ${ENV_DIR}/nenv` section, before the `EOF` en
 
 A new build step needs to be added to the TeamCity project configuration with the following information:
 
-![TeamCity Build Step](https://user-images.githubusercontent.com/435544/37061103-ffc6d5e2-2157-11e8-9050-d43120c6f0d6.png)
+![TeamCity Build Step](https://user-images.githubusercontent.com/435544/37919429-6ed747d2-30e9-11e8-878f-6c698fb64dda.png)
 
 where the contents of the `Custom script` are:
 
