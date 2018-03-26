@@ -24,7 +24,7 @@ function get_color() {
 }
 
 #
-# Generate the desired message to send to the Slack "ui-platform" incoming webhook integration
+# Generate the desired message to send to the Slack "frost-foundation" incoming webhook integration
 #
 function generate_message() {
     local scope=$1
@@ -41,8 +41,8 @@ function generate_message() {
     color=$(get_color "$scope")
 
     # @TODO
-    # Do not know why the string of "send-message.sh ui-platform" is being prepended to content but this removes it
-    changelog="$(echo "$changelog" | sed 's/send-message.sh ui-platform//g')"
+    # Do not know why the string of "send-message.sh frost-foundation" is being prepended to content but this removes it
+    changelog="$(echo "$changelog" | sed 's/send-message.sh frost-foundation//g')"
 
     # Replace instances of ** to * convert from GitHub to Slack styling
     changelog="$(echo "$changelog" | sed 's/\*\*/\*/g')"
@@ -51,7 +51,7 @@ function generate_message() {
     changelog="$(echo "$changelog" | sed 's/"//g')"
 
     message="{
-        \"username\": \"ui-platform\",
+        \"username\": \"frost-foundation\",
         \"attachments\": [
             {
                 \"fallback\": \"$title\",
@@ -81,7 +81,7 @@ function generate_repository_error_message() {
     color=$(get_color)
 
     local message="{
-        \"username\": \"ui-platform\",
+        \"username\": \"frost-foundation\",
         \"attachments\": [
             {
                 \"fallback\": \"$title\",

@@ -4,7 +4,7 @@ A collection of scripts and configurations used by the Ciena organization in the
 ## scripts/slack/incoming-webhooks/send-message.sh
 
 After `pr-bumper` has merged an outstanding PR and bumped the package version this script should then be ran to send a
-message to the `#ui-platform` Slack channel.
+message to the `#frost-foundation` Slack channel.
 
 The message will look like:
 
@@ -35,9 +35,9 @@ A `repository` property needs to added to the _package.json_ file, such as:
 An environment variable needs to be added to the TravisCI configuration at [https://travis-ci.org](https://travis-ci.org) as well as two additions need to be added to the _.travis.yml_ file.
 
 The environment variable that needs to be added to the respective package's configuration in TravisCI is
-`SLACK_INCOMING_WEBHOOK_URL` and needs to be set to the url of the incoming webhook integration for the `#ui-platform`
-channel.  To do this visit `https://travis-ci.org/<organization>/<repo>/settings`. **NOTE:** When adding the
-`SLACK_INCOMING_WEBHOOK_URL` variable, make sure to keep the "_Display value in build log_" set to "_OFF_" otherwise the url will be written to the build logs for the public to see.
+`SLACK_INCOMING_WEBHOOK_URL` and needs to be set to the url of the incoming webhook integration for the
+`#frost-foundation` channel.  To do this visit `https://travis-ci.org/<organization>/<repo>/settings`. **NOTE:** When adding the `SLACK_INCOMING_WEBHOOK_URL` variable, make sure to keep the "_Display value in build log_" set to "_OFF_"
+otherwise the url will be written to the build logs for the public to see.
 
 The additions to the _.travis.yml_ file are to add the `ciena-devops` package to the `npm install` in the
 `before_install` configuration, such as:
@@ -58,7 +58,7 @@ after_deploy:
 
 #### #1
 
-An environment variable needs to be added to the TeamCity project configuration named `env.tc.slack.ui-platform.incoming.webhook` whose value is set to the url of the incoming webhook integration for the `#ui-platform` channel.
+An environment variable needs to be added to the TeamCity project configuration named `env.tc.slack.frost-foundation.incoming.webhook` whose value is set to the url of the incoming webhook integration for the `#frost-foundation` channel.
 
 #### #2
 
@@ -68,7 +68,7 @@ The modification that needs to be made is to add
 
 ```bash
 # Fill in SLACK_INCOMING_WEBHOOK_URL
-export SLACK_INCOMING_WEBHOOK_URL="%env.tc.slack.ui-platform.incoming.webhook%"
+export SLACK_INCOMING_WEBHOOK_URL="%env.tc.slack.frost-foundation.incoming.webhook%"
 ```
 
 somewhere within the `cat << EOF > ${ENV_DIR}/nenv` section, before the `EOF` entry.
