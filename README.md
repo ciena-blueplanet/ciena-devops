@@ -8,7 +8,7 @@ message to the `#frost-foundation` Slack channel.
 
 The message will look like:
 
-![Example Slack Message](https://user-images.githubusercontent.com/435544/35946094-19944f76-0c28-11e8-8c6d-783241c4eff4.png)
+![Example Slack Message](https://user-images.githubusercontent.com/435544/37919606-0125f1ec-30ea-11e8-9f9e-28f9cddc79fe.png)
 
 PATCHES will have a green color, MINOR blue, and MAJOR burgundy.
 
@@ -78,7 +78,7 @@ somewhere within the `cat << EOF > ${ENV_DIR}/nenv` section, before the `EOF` en
 
 A new build step needs to be added to the TeamCity project configuration with the following information:
 
-![TeamCity Build Step](https://user-images.githubusercontent.com/435544/37061103-ffc6d5e2-2157-11e8-9050-d43120c6f0d6.png)
+![TeamCity Build Step](https://user-images.githubusercontent.com/435544/37919429-6ed747d2-30e9-11e8-878f-6c698fb64dda.png)
 
 where the contents of the `Custom script` are:
 
