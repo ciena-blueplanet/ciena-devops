@@ -4,7 +4,6 @@ sudo: false
 
 node_js:
 - $PUBLISH_NODE_VERSION
-- stable
 
 addons:
   apt:
