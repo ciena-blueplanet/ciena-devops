@@ -12,10 +12,10 @@
 # Include other scripts
 #
 source $(dirname $0)/../../package-info.sh
-source $(dirname $0)/ui-platform/generate-message.sh
+source $(dirname $0)/frost-foundation/generate-message.sh
 
 #
-# Send message to the Slack "ui-platform" incoming webhook integration
+# Send message to the Slack "frost-foundation" incoming webhook integration
 #
 function send_message() {
     curl -X POST --data-urlencode "payload=$1" "$SLACK_INCOMING_WEBHOOK_URL"

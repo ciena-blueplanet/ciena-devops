@@ -1,4 +1,4 @@
-Are you opening a **BUG REPORT** or a **FEATURE REQUEST**?
+Are you opening a **BUG REPORT** or a **FEATURE REQUEST / CODE CHANGE**?
 
 There is a section for each below.  Please complete the appropriate section and remove the other one.
 
@@ -9,7 +9,7 @@ We realize there is a lot of data requested here. We ask only that you do your b
 
 * [ ] I have ensured that the issue isn't already reported
 * [ ] I have confirmed that the issue is reproducible with the latest released version
-* [ ] I have deleted the **FEATURE REQUEST** section
+* [ ] I have deleted the **FEATURE REQUEST / CODE CHANGE** section
 
 ## Summary
 * Provide a general summary of the issue in the title above
@@ -51,18 +51,19 @@ We realize there is a lot of data requested here. We ask only that you do your b
 
 (answer all that are applicable)
 
-* [ ] I am using the latest released version (can check with `npm ls <packag-name>`)
+* [ ] I am using the latest released version (can check with `npm ls <package-name>`)
 * I am using these browsers:
   * [ ] Latest Chrome
   * [ ] Latest Firefox
 * [ ] My version of `Node` is:
+* [ ] My version of `npm` is:
 * [ ] My OS is:
 * [ ] Include the contents of your _package.json_ file
 
 
 
 
-# FEATURE REQUEST
+# FEATURE REQUEST / CODE CHANGE
 
 * [ ] I have deleted the **BUG REPORT** section
 
@@ -78,7 +79,7 @@ We realize there is a lot of data requested here. We ask only that you do your b
   * What is the expected outcome?
 
 ## Detailed design
-This is the bulk of the Feature Request.
+This is the bulk of the Feature Request / Code Change.
 
 Explain the design in enough detail for somebody familiar with this addon, the UI Platform ecosystem, and Ember.js to understand, and for somebody familiar with the implementation to implement. This should get into specifics and corner-cases, and include examples of how the feature is used. Any new terminology should be defined here.
 
