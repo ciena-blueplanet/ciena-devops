@@ -3,7 +3,7 @@ language: node_js
 sudo: false
 
 node_js:
-- '8.1.2'
+- $PUBLISH_NODE_VERSION
 - stable
 
 addons:
@@ -45,7 +45,7 @@ deploy:
     secure: gQZsgax0d2w9iAyAkp0dLmjGylF/0ftf/ereWiAdEYHypOgdzTPjGv17LQftjEuHrgM73J+RRT0A1ugeA4pRCRjxoGA7Kus0d0QKZt2AjnGWEB8UjIc8nvK61Ku3BpfTNEhYCJZQNyRYtL3FDC3o94FNSg7ZNAwKW9KzOMfrF7sxtzktUg1FhG62IdiSeoOSFK4MM5SiOS7g1UZqYxYxeqVy3VGT376/orjvk3arj/5sKcddlOViw7ohUDIrzHB2kfHX6PhtdpUexoBL/xwcTKRHdTH4awg8qVxHgYlg2coe32qOdpxnwMj0cBT9MnoBPCdL4Sc4ZKxLzN20B+itRgZO8pB5YleTjdOqn7OEjDQeyhJubA+SEH5qc2G/u++mdrMI2+08+y8IbfaGCj1ANDb/2wn3YGCmsmCjFZvxNSU1Y/GE5+fxs1D9Ozyrcc6uU/XoRt3DvwYIK/5tOk+pdzH/cYOW+vk62JjzJUGAlel9r2C7G+guDz2LuWZTVJceGWwEEr4cn8TCkrYYsvbV98CXVrnBmQmtDtEOuSBrdGAqnov7ZI05EmsvvxAJ8dtVjID/cMBU6jP8ixQlkDqN2+n8s4eC6taT8QDWKz2s/ZST3oSCvh/ym+juj9pdisxnPm/vXbLkmoP0Cv9B+bG6LOaOAqBo7wbnWq7K6d8DeMU=
   on:
     all_branches: true
-    node: '8.1.2'
+    node: $PUBLISH_NODE_VERSION
     tags: true
 
 notifications:
