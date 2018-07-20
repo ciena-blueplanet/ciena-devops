@@ -1,6 +1,6 @@
 {
   "name": "ciena-devops",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of scripts and configurations used by the Ciena organization in their DevOps",
   "directories": {
     "doc": "doc",
