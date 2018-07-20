@@ -1,52 +1,41 @@
 language: node_js
-
 sudo: false
-
 node_js:
-- $PUBLISH_NODE_VERSION
-
+- "$PUBLISH_NODE_VERSION"
 addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 env:
   matrix:
   - CXX=g++-4.8
   global:
     secure: QK5nLaToSe5GKkxmfMxd+kFufcAKH2E9Upb35KnGMt47NT8r9Nx5P+cNM6o+XldcraFlar6VGokmu4Nq9D4jG224Ki/ikZfZdolyXA/KVbHn3h0ynbsz4rNTO29l/K4GAHBRZoN59qyaPS8at+OC7Wmqdnqx/I1/lPlr4H4oPBqsFXHBJ3pkulyQ2hWCvtoMlQsuEE7ULQRu+O/UQBO5OTHj+SWAj4FVGHnf+WKRey8IWxIY+Ncur6aeEMZlDIWYCJ//Wb9daOiGvNkAZwQiHUrEbvqGu7rumcUYz7ygrVkUMQ5cFPJfTshnxeRK2ZO2bPtfxDUISXjVKGsrNPeyg5uHIUXg6qgEZ7TKc/ARMF/4LvaTa8egQqQo/8Il+B08b9539WZBbpXr6eb3zVk/NevOmUNdv0JGuL6eWgQfSxBEiE2BT95AMtr7pumxNO681TF4nAjtG9xDimch2bxUO6ZKXRSA5gXvp42P5gXRwYVPXkvnhx6Zd0e02/1cC9wp5Df/B5b2vpq6JYB3bxvKL6EHScM36ZdEsv8mhmXdEbkttZ4LXp3RhAFbXQfTQVy3AvHrNWAi7SqJF+j7wLRgwPq+xx+jbOeh75K/LOy0TEWY7o3xIvlPPpbJP5382YsksO2A2GuWsfv2TD6HBGpkbpwvph+Zb6KOgzwu5AaZdf4=
-
 before_install:
 - npm install -g pr-bumper@^3.7.0
-- $(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh
-
+- "$(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh"
 install:
-- $(npm root -g)/pr-bumper/.travis/maybe-install.sh
-
+- "$(npm root -g)/pr-bumper/.travis/maybe-install.sh"
 script:
-- $(npm root -g)/pr-bumper/.travis/maybe-test.sh
-- $(npm root -g)/pr-bumper/.travis/maybe-bump-version.sh
-
+- "$(npm root -g)/pr-bumper/.travis/maybe-test.sh"
+- "$(npm root -g)/pr-bumper/.travis/maybe-bump-version.sh"
 after_success:
-- $(npm root -g)/pr-bumper/.travis/maybe-publish-coverage.sh
-
+- "$(npm root -g)/pr-bumper/.travis/maybe-publish-coverage.sh"
 deploy:
   provider: npm
   email: npm.ciena@gmail.com
   skip_cleanup: true
   api_key:
-    secure: gQZsgax0d2w9iAyAkp0dLmjGylF/0ftf/ereWiAdEYHypOgdzTPjGv17LQftjEuHrgM73J+RRT0A1ugeA4pRCRjxoGA7Kus0d0QKZt2AjnGWEB8UjIc8nvK61Ku3BpfTNEhYCJZQNyRYtL3FDC3o94FNSg7ZNAwKW9KzOMfrF7sxtzktUg1FhG62IdiSeoOSFK4MM5SiOS7g1UZqYxYxeqVy3VGT376/orjvk3arj/5sKcddlOViw7ohUDIrzHB2kfHX6PhtdpUexoBL/xwcTKRHdTH4awg8qVxHgYlg2coe32qOdpxnwMj0cBT9MnoBPCdL4Sc4ZKxLzN20B+itRgZO8pB5YleTjdOqn7OEjDQeyhJubA+SEH5qc2G/u++mdrMI2+08+y8IbfaGCj1ANDb/2wn3YGCmsmCjFZvxNSU1Y/GE5+fxs1D9Ozyrcc6uU/XoRt3DvwYIK/5tOk+pdzH/cYOW+vk62JjzJUGAlel9r2C7G+guDz2LuWZTVJceGWwEEr4cn8TCkrYYsvbV98CXVrnBmQmtDtEOuSBrdGAqnov7ZI05EmsvvxAJ8dtVjID/cMBU6jP8ixQlkDqN2+n8s4eC6taT8QDWKz2s/ZST3oSCvh/ym+juj9pdisxnPm/vXbLkmoP0Cv9B+bG6LOaOAqBo7wbnWq7K6d8DeMU=
+    secure: Tj1aSH/daxtdomxjo6fRDKrlmlcNRK3DeH5vySKi6XYQBU8VbVWbSRztJlWSE6nD1Ai+GIT7mhNLMGKCyFkot9hRemD9nnD0ua3O6szqR4MfPELqDWP9L/CQG7rwvsodxGJTTYI86HfsXpBYXldp0lA4uMYlwlGis4SokLkurUPAigMxugVozPxE5cAj2wqFvZUwV/c+zo6av3HLBFuAppAE20uFT/gn+q+HhWPBMgfP/j6xuVEF+XrjuiFvBqb9tmKnFmL/mTwTn3EXbKrjfI23nZZj0mMi22/V8NcrJwwmZnVgtuFhN3G+Md0VVTDMycYdNQwYcD0AVnrzkda9MASiK8CEeF8WfB1+sTfhvhBLaV9/EtDeyp9lxbzRp5qIA74zp5N7oQmt3pF4eCJKXMYKaybOe5m8JjEp0ul2ChsFKcBi5jgTE41WRT5yyC+7QzoC28bbwePnVsL/3ji3ryMe0BUM9YLCXml67pA/fUxD2buEAanlydPIUtbTtJLvpVdYy18W8uydtezaMOrUK8XXoN3ycHVEWH3jNiUExckGG+Gi2Oq3tsTK/NBp34WPT1sbKIBiKMgPJTXgFZcuDPYbzap4Rwt1Y92Hyasq3+NraxMm5nBg5c6QJxuyl8+KFHwBZakvpNA1RZZfxY33ffrbyBSSg8gXKfL+7VHV0mk=
   on:
     all_branches: true
-    node: $PUBLISH_NODE_VERSION
+    node: "$PUBLISH_NODE_VERSION"
     tags: true
-
 notifications:
   slack:
     secure: aiEQqG38+sPKH/H/sQ/5JmttF5u/r81FEFg8Ccq+d9dXkCFgKTNGOk+lnnqfCCtYrWW89O8Uw5QeGMaVuG7GaEHxlsLQKW0HxzfnGTWFjaIRVI+w92BIsM6YoTY5SWZfjkETVz7FoPmHHNsJ5/k4rHtcvpk3IGzhIYuFnXtEb4pmsnAqzlioX+8BQMBi8NkCjy85JXom/034iIZMNoM+s+/K1/EgCwFQ2wp3i+cFxWz7SVuic6iW3dOLr5SGPgP74oNVaviMeoU7zX46nL0gT0wVmo8iqoOi/Kv/S499X1eofbYOH6UQ16RIeWBS0Sj5HY+SE/TojoIhNdSU4eDVcUFmnUl7yrIcNjW2DnXNyIpgKOUVq5xNS0xD409CBzwHPfJ4Icex0E+QrHz0zOGLyCG1Td4+UA8HAkKhLyv/hS+9RvpK+7cJEjonT/fYe0tI6sTmDvyiEj0fGJvrvWWuuwxfTIn3BDxFYH082B/vY0veNI8wloWRcqMhDJpmjD0+aLVjSqPtKv6FvL2d2temrnV3TuUa9fP8EleccGzZfW/kmcs20mVOfznhDMzy17A3X6rkyBDqHsbXPKbc2nRt3IKjQFT8rC4WhaKkFX3GTv2wXhOaKO6v8ss8jN1pwIhY+H6FahFhRx19mPLDNQVAdyk7oLjERGQRzdStqSWVEfw=
